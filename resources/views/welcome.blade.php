@@ -55,10 +55,9 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                         <ul class="nav navbar-nav main-navbar-nav">
-                            <li class="active"><a href="index.html" title="">HOME</a></li>
-                            <li><a href="page.html" title="">PAGE</a></li>
-                            <li><a href="category.html" title="">CATEGORY</a></li>
-                            <li><a href="#" title="">BLOG</a></li>
+                            <li class="active"><a href="/" title="">HOME</a></li>
+                            <li><a href="page" title="">PAGE</a></li>
+                            <li><a href="category" title="">CATEGORY</a></li>
                             <li><a href="#" title="">LOG IN</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -189,6 +188,9 @@
                     </div>
                 </div>
             </section>
+
+            <!--Lastes News-->
+
             <section class="home-area">
                 <div class="home_content">
                     <div class="container">
@@ -238,6 +240,8 @@
                                     </li>
                                 </ul>
                             </div>
+
+                <!--REFERENCES-->
 
                             <div class="col-sm-9 home_bottom">
                                 <h2 class="sub_title">REFERENCES</h2>
@@ -331,6 +335,9 @@
                                     </div>
                                 </div>
                             </div>
+
+                <!--CALL CENTER-->
+
                             <div class="col-sm-3">
                                 <h2 class="sub_title w10">CALL YOU</h2>
                                 <div class="clearfix"></div>
@@ -358,6 +365,9 @@
                 </div>
             </section>
         </main>
+
+        <!--FOOTER-->
+
         <footer class="site-footer">
             <div class="container">
                 <div class="row">

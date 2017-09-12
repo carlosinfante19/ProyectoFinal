@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Company NAME</title>
-    
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=latin-ext" rel="stylesheet">
-    
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    
+
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
+
+    <!--HEADER-->
+
     <header class="site-header">
         <div class="top">
             <div class="container">
@@ -32,41 +35,35 @@
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
                             <li><a href="tel:+902222222222"><i class="fa fa-phone"></i> +90 222 222 22 22</a></li>
-                        </ul>                        
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-default">
-			<div class="container">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
-					<span class="sr-only">Toggle Navigation</span>
-					<i class="fa fa-bars"></i>
-				</button>
-				<a href="index.html" class="navbar-brand">
-					<img src="img/logo.png" alt="Post">
-				</a>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-                    <ul class="nav navbar-nav main-navbar-nav">
-                        <li><a href="index.html" title="">HOME</a></li>
-                        <li class="dropdown">
-                            <a href="#" title="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DROPDOWN MENU <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" title="">SUB MENU 1</a></li>
-                                <li><a href="#" title="">SUB MENU 2</a></li>
-                                <li><a href="#" title="">SUB MENU 3</a></li>
-                            </ul>
-                        </li>
-                        <li class="active"><a href="page.html" title="">PAGE</a></li>
-                        <li><a href="category.html" title="">CATEGORY</a></li>
-                        <li><a href="#" title="">MENU ITEM</a></li>
-                        <li><a href="#" title="">MENU ITEM</a></li>
-                    </ul>                           
-                </div><!-- /.navbar-collapse -->                
-				<!-- END MAIN NAVIGATION -->
-			</div>
-		</nav>        
+
+        <!--Menu bar-->
+
+            <nav class="navbar navbar-default">
+    			<div class="container">
+    				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
+    					<span class="sr-only">Toggle Navigation</span>
+    					<i class="fa fa-bars"></i>
+    				</button>
+    				<a href="index.html" class="navbar-brand">
+    					<img src="img/logo.png" alt="Post">
+    				</a>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+                        <ul class="nav navbar-nav main-navbar-nav">
+                            <li><a href="/" title="">HOME</a></li>
+                            <li class="active"><a href="page" title="">PAGE</a></li>
+                            <li><a href="category" title="">CATEGORY</a></li>
+                            <li><a href="#" title="">LOG IN</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+    				<!-- END MAIN NAVIGATION -->
+    			</div>
+    		</nav>
     </header>
     <div class="bread_area">
         <div class="container">
@@ -75,7 +72,7 @@
                     <ol class="breadcrumb">
                         <li><a href="#">Home</a></li>
                         <li class="active">Page Title</li>
-                    </ol>                    
+                    </ol>
                 </div>
             </div>
         </div>
@@ -94,7 +91,7 @@
 
                         <p>Curabitur euismod lobortis sapien. Maecenas magna ligula, vulputate in nulla ac, tincidunt suscipit erat. Sed ac tempor nisi. Suspendisse laoreet, odio et consequat varius, sem urna convallis leo, egestas malesuada elit erat id tellus. Suspendisse scelerisque in felis at pretium. Maecenas dictum quam posuere ex hendrerit tempus. Donec vehicula quis erat quis sollicitudin. Vestibulum ultrices vitae arcu quis dignissim. Donec sagittis tincidunt arcu id pellentesque. Nullam eu risus tristique, mattis arcu laoreet, sagittis purus. Nulla facilisi. Nam ac justo quis elit pharetra scelerisque. Curabitur et dapibus ex. In quis pretium turpis. Aliquam tincidunt quam interdum, faucibus odio a, porttitor dui.</p>
 
-                        <p>Aenean non dapibus ante, sed dictum enim. Maecenas elementum auctor imperdiet. Nam eu mi placerat, dignissim libero condimentum, ornare est. Nunc euismod viverra sapien quis porttitor. Fusce eleifend quam quis nibh dictum scelerisque in vel lacus. Duis ac risus quis eros pretium lobortis. In malesuada est est.</p>                        
+                        <p>Aenean non dapibus ante, sed dictum enim. Maecenas elementum auctor imperdiet. Nam eu mi placerat, dignissim libero condimentum, ornare est. Nunc euismod viverra sapien quis porttitor. Fusce eleifend quam quis nibh dictum scelerisque in vel lacus. Duis ac risus quis eros pretium lobortis. In malesuada est est.</p>
                     </div>
                 </section>
                 <aside class="sidebar col-sm-3">
@@ -120,7 +117,7 @@
                     <ul class="list-inline">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>                        
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 fbox">
@@ -175,7 +172,7 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome');//welcome.blade.php
 });
 
-Route::get('/page', function () {
-    return view('/page');
+Route::get('page', function () {
+    return view('/page');//page.blade.php
+});
+
+Route::get('category', function () {
+    return view('/category');//category.blade.php
 });
