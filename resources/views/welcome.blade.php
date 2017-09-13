@@ -111,18 +111,18 @@
                 <div class="container">
                     <div class="row">
                         @foreach($data['services'] as $service)
-                        @endforeach
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <i class="{{$service->icon}}"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">{{$service->title}}</h4>
-                                    <p>{{$service->content}}</p>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <i class="{{$service->icon}}"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">{{$service->title}}</h4>
+                                        <p>{{$service->content}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
