@@ -107,8 +107,12 @@ class ServicesController extends Controller
      * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Services $services)
+    public function destroy($id)
     {
-        //
+        $services = Services::find($id);
+        $services->delete();
+
+        // redirect
+        return redirect()->route('services.index')->with('status', 'Services Deleted Sucessfully');
     }
 }

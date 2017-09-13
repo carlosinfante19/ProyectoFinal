@@ -21,9 +21,15 @@
                             <a href="{{route('services.edit',$service->id) }}">
                                 <li class="list-group-item">
                                     Services {{$service->id}}
-                                    <a href="{{route('services.edit',$service->id) }}"><i class="fa fa-trash-o pull-right" aria-hidden="true"></i></a>
+                                    <form id="delete-form" action="{{ URL::route('services.destroy', $service->id) }}" method="POST" style="all: initial; * {all: unset;}">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <a href="javascript:{}" onclick="document.getElementById('delete-form').submit(); return false;">
+                                            <i class="fa fa-trash-o pull-right" aria-hidden="true"></i>
+                                        </a>
+                                    </form>
                                     <a href="{{route('services.edit',$service->id) }}"><i class="fa fa-pencil pull-right" aria-hidden="true"></i></a>
-                                    <a href="{{route('services.edit',$service->id) }}"><i class="fa fa-eye pull-right" aria-hidden="true"></i></a>
+                                    <a href="{{route('services.show',$service->id) }}" id="delete-button"><i class="fa fa-eye pull-right" aria-hidden="true"></i></a>
                                 </li>
                             </a>
                         @endforeach
