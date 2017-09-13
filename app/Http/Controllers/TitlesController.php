@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Titles;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 
 class TitlesController extends Controller
 {
@@ -72,6 +73,12 @@ class TitlesController extends Controller
     public function update(Request $request, $id)
     {
         $titles = Titles::findOrFail($id);
+        
+        $this->validate($request,[
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+        
         $titles->update([
             'title'   => $request->input('title'),
             'content' => $request->input('content'),

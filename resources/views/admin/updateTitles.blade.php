@@ -11,15 +11,7 @@
                     <div class="col-sm-10 col-sm-offset-1">
                         
                         <h3>Edit Title # {{$titles->id}}</h3>
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                        
                         <form action="{{ route('titles.update', $titles->id) }}" role="form" method="post">
                             {!! method_field('PUT') !!}
                             {!! csrf_field() !!}
@@ -29,7 +21,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="title">Content</label>
+                                <label for="title">Conten</label>
                                 <input type="text" class="form-control" id="content" name="content" value="{{$titles->content}}">
                             </div>
                             
@@ -52,7 +44,14 @@
                             </button>
                             
                         </form>
-                        
+                        hola
+                        @if(count($errors))
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
                 </div>
             </div>
