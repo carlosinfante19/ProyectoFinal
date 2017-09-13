@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\References;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ReferencesController extends Controller
 {
@@ -51,7 +52,7 @@ class ReferencesController extends Controller
             'filename'  => $filename
         ]);
         
-        return redirect()->route('reference.index')
+        return redirect()->route('references.index')
                          ->with('status', 'Reference Created Sucessfully');
     }
 
@@ -109,8 +110,11 @@ class ReferencesController extends Controller
      * @param  \App\References  $references
      * @return \Illuminate\Http\Response
      */
-    public function destroy(References $references)
+    public function destroy(References $references,$id)
     {
-        //
+        $reference = References::find($id);
+        $reference->delete();
+        Storage::delete('/public/'.$reference->filename);        
+        return redirect()->route('references.index')->with('status', 'Reference Deleted Sucessfully');
     }
 }
