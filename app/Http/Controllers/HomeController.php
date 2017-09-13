@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Titles;
+use App\Services;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['titles'] = Titles::all();
+        $data['titles']   = Titles::all();
+        $data['services'] = Services::all();
         return view('welcome', compact('data'));
     }
 }
