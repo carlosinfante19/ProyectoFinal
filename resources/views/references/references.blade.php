@@ -34,6 +34,7 @@
                             </a>
                         @endforeach
                         </ul>
+                        <a href="{{route('references.create') }}" class="btn btn-success pull-right">Create New</a>
                     </div>
                 </div>
                 

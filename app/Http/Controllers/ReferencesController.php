@@ -36,23 +36,23 @@ class ReferencesController extends Controller
      */
     public function store(Request $request)
     {
-        $filename = uniqid();
         $this->validate($request,[
-            'priority' => 'required|unique:references',
+            'priority' => 'required',
             'url'   => 'url',
             'image' => 'required'
         ]);
     
-        $store = $request->file('image')->store('references');
+        $store    = $request->file('image')->store('public');
+        $filename = substr($store, strpos($store, "/") + 1);
         
         References::create([
             'priority'  => $request->input('priority'),
             'url'       => $request->input('url'),
-            'filename'  => $store
+            'filename'  => $filename
         ]);
         
-        return redirect()->route('services.index')
-                         ->with('status', 'Services Created Sucessfully');
+        return redirect()->route('reference.index')
+                         ->with('status', 'Reference Created Sucessfully');
     }
 
     /**
@@ -73,9 +73,10 @@ class ReferencesController extends Controller
      * @param  \App\References  $references
      * @return \Illuminate\Http\Response
      */
-    public function edit(References $references)
+    public function edit($id)
     {
-        //
+        $references = References::findOrFail($id);
+        return view('references.updateReferences', [ 'references' => $references ]);
     }
 
     /**
@@ -85,9 +86,21 @@ class ReferencesController extends Controller
      * @param  \App\References  $references
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, References $references)
+    public function update(Request $request, $id)
     {
-        //
+        $references = References::findOrFail($id);
+        
+        $this->validate($request,[
+            'priority' => 'required',
+            'url'   => 'url'
+        ]);
+        
+        $references->update([
+            'priority'  => $request->input('priority'),
+            'url'       => $request->input('url')
+        ]);
+
+       return redirect()->route('references.index')->with('status', 'Services Updated Sucessfully');
     }
 
     /**
