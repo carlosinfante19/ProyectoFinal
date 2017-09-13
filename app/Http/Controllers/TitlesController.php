@@ -14,7 +14,8 @@ class TitlesController extends Controller
      */
     public function index()
     {
-        //
+        $titles = Titles::All();
+        return view('title.titles', [ 'titles' => $titles ]);
     }
 
     /**
@@ -58,8 +59,7 @@ class TitlesController extends Controller
     public function edit($id)
     {
         $titles = Titles::findOrFail($id);
-        //
-        return view('admin.updateTitles', [ 'titles' => $titles ]);
+        return view('title.updateTitles', [ 'titles' => $titles ]);
     }
 
     /**
@@ -78,7 +78,7 @@ class TitlesController extends Controller
             'icon'    => $request->input('icon'),
         ]);
 
-       //return redirect()->route('services')->with('status', 'Services Updated Sucessfully');
+       return redirect()->route('titles.index')->with('status', 'Services Updated Sucessfully');
         //
     }
 
