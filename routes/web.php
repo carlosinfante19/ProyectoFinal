@@ -22,3 +22,7 @@ Route::get('page', function () {
 Route::get('category', function () {
     return view('/category');//category.blade.php
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
