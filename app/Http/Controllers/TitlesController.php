@@ -55,9 +55,11 @@ class TitlesController extends Controller
      * @param  \App\Titles  $titles
      * @return \Illuminate\Http\Response
      */
-    public function edit(Titles $titles)
+    public function edit($id)
     {
+        $titles = Titles::findOrFail($id);
         //
+        return view('admin.updateTitles', [ 'titles' => $titles ]);
     }
 
     /**
@@ -67,8 +69,16 @@ class TitlesController extends Controller
      * @param  \App\Titles  $titles
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Titles $titles)
+    public function update(Request $request, $id)
     {
+        $titles = Titles::findOrFail($id);
+        $titles->update([
+            'title'   => $request->input('title'),
+            'content' => $request->input('content'),
+            'icon'    => $request->input('icon'),
+        ]);
+
+       //return redirect()->route('services')->with('status', 'Services Updated Sucessfully');
         //
     }
 

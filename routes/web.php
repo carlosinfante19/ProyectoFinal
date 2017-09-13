@@ -23,6 +23,8 @@ Route::get('category', function () {
     return view('/category');//category.blade.php
 });
 
+Route::resource('titles', 'TitlesController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
