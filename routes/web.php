@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');//welcome.blade.php
-});
+Route::get('/', 'HomeController@index');//welcome.blade.php
 
 Route::get('page', function () {
     return view('/page');//page.blade.php
