@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Titles;
+use App\Services;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
-class TitlesController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class TitlesController extends Controller
      */
     public function index()
     {
-        $titles = Titles::All();
-        return view('title.titles', [ 'titles' => $titles ]);
+        $services = Services::All();
+        return view('services.services', [ 'services' => $services ]);
     }
 
     /**
@@ -26,7 +26,7 @@ class TitlesController extends Controller
      */
     public function create()
     {
-        //
+        return view('services.createServices');
     }
 
     /**
@@ -37,16 +37,28 @@ class TitlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validate($request,[
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+        
+        Services::create([
+            'title'   => $request->input('title'),
+            'content' => $request->input('content'),
+            'icon'    => $request->input('icon')
+        ]);
+
+        return redirect()->route('services.index')->with('status', 'Services Created Sucessfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Titles  $titles
+     * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function show(Titles $titles)
+    public function show(Services $services)
     {
         //
     }
@@ -54,48 +66,47 @@ class TitlesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Titles  $titles
+     * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $titles = Titles::findOrFail($id);
-        return view('title.updateTitles', [ 'titles' => $titles ]);
+        $services = Services::findOrFail($id);
+        return view('services.updateServices', [ 'services' => $services ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Titles  $titles
+     * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $titles = Titles::findOrFail($id);
+        $services = Services::findOrFail($id);
         
         $this->validate($request,[
             'title' => 'required',
             'content' => 'required',
         ]);
         
-        $titles->update([
+        $services->update([
             'title'   => $request->input('title'),
             'content' => $request->input('content'),
             'icon'    => $request->input('icon'),
         ]);
 
-       return redirect()->route('titles.index')->with('status', 'Titles Updated Sucessfully');
-        //
+       return redirect()->route('services.index')->with('status', 'Services Updated Sucessfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Titles  $titles
+     * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Titles $titles)
+    public function destroy(Services $services)
     {
         //
     }

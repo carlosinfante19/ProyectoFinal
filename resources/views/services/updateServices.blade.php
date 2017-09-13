@@ -5,24 +5,32 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Titles</div>
+                <div class="panel-heading">Services</div>
 
                 <div class="panel-body">
                     <div class="col-sm-10 col-sm-offset-1">
                         
-                        <h3>Edit Title # {{$titles->id}}</h3>
-                        
-                        <form action="{{ route('titles.update', $titles->id) }}" role="form" method="post">
+                        <h3>Edit Services # {{$services->id}}</h3>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form action="{{ route('services.update', $services->id) }}" role="form" method="post">
                             {!! method_field('PUT') !!}
                             {!! csrf_field() !!}
                             <div class="form-group">
                                 <label for="title">Title</label>
-                                <input type="text" class="form-control" id="title" name="title" value="{{$titles->title}}">
+                                <input type="text" class="form-control" id="title" name="title" value="{{$services->title}}">
                             </div>
                             
                             <div class="form-group">
-                                <label for="title">Conten</label>
-                                <input type="text" class="form-control" id="content" name="content" value="{{$titles->content}}">
+                                <label for="title">Content</label>
+                                <textarea style="resize:none" id="content" name="content" class="form-control" rows="3">{{$services->content}}</textarea>
                             </div>
                             
                             <div class="form-group">
@@ -44,14 +52,7 @@
                             </button>
                             
                         </form>
-                        hola
-                        @if(count($errors))
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{$error}}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                        
                     </div>
                 </div>
             </div>

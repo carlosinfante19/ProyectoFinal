@@ -22,6 +22,7 @@ Route::get('category', function () {
 });
 
 Route::resource('titles', 'TitlesController');
+Route::resource('services', 'ServicesController');
 
 Auth::routes();
 
