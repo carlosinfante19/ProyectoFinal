@@ -21,9 +21,9 @@
                             <a href="{{route('services.edit',$service->id) }}">
                                 <li class="list-group-item">
                                     Services {{$service->id}}
-                                    <a href="#"><i class="fa fa-trash-o pull-right" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-pencil pull-right" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-eye pull-right" aria-hidden="true"></i></a>
+                                    <a href="{{route('services.edit',$service->id) }}"><i class="fa fa-trash-o pull-right" aria-hidden="true"></i></a>
+                                    <a href="{{route('services.edit',$service->id) }}"><i class="fa fa-pencil pull-right" aria-hidden="true"></i></a>
+                                    <a href="{{route('services.edit',$service->id) }}"><i class="fa fa-eye pull-right" aria-hidden="true"></i></a>
                                 </li>
                             </a>
                         @endforeach

@@ -58,9 +58,10 @@ class ServicesController extends Controller
      * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function show(Services $services)
+    public function show($id)
     {
-        //
+        $services = Services::find($id);
+        return view('services.serviceShow', [ 'services' => $services ]);
     }
 
     /**
