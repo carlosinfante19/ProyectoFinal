@@ -21,8 +21,9 @@ Route::get('category', function () {
     return view('/category');//category.blade.php
 });
 
-Route::resource('titles', 'TitlesController');
-Route::resource('services', 'ServicesController');
+Route::resource( 'titles'     , 'TitlesController'     );
+Route::resource( 'services'   , 'ServicesController'   );
+Route::resource( 'references' , 'ReferencesController' );
 
 Auth::routes();
 
