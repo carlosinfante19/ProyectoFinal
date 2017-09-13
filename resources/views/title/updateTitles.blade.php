@@ -30,7 +30,7 @@
                             
                             <div class="form-group">
                                 <label for="title">Content</label>
-                                <input type="text" class="form-control" id="content" name="content" value="{{$titles->content}}">
+                                <textarea style="resize:none" id="content" name="content" class="form-control" rows="3">{{$titles->content}}</textarea>
                             </div>
                             
                             <div class="form-group">
