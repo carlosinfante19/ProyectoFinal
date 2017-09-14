@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default">
-                <div class="panel-heading">References</div>
+                <div class="panel-heading">blog</div>
 
                 <div class="panel-body">
                     <div class="col-sm-10 col-sm-offset-1">
                         
-                        <h3>Create References</h3>
+                        <h3>Create Post</h3>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -20,17 +20,17 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{ route('references.store') }}" role="form" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('blog.store') }}" role="form" method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
                             {!! method_field('POST') !!}
                             <div class="form-group">
-                                <label for="url">Url</label>
-                                <input type="text" class="form-control" id="url" name="url">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" name="title">
                             </div>
                             
                             <div class="form-group">
-                                <label for="priority">Order</label>
-                                <input type="number" class="form-control" id="priority" name="priority">
+                                <label for="title">Content</label>
+                                <textarea style="resize:none" id="content" name="content" class="form-control" rows="3"></textarea>
                             </div>
                             
                             <div class="input-group form-group">
@@ -43,7 +43,7 @@
                             </div>
                             
                             <button class="btn btn-primary pull-right">Save</button>
-                            <button  href="{{ route('references.index') }}" class="btn btn-danger pull-left">Cancel</button>
+                            <button  href="{{ route('blog.index') }}" class="btn btn-danger pull-left">Cancel</button>
                             
                         </form>
                         

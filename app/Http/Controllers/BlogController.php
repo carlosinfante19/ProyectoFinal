@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -14,8 +15,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blog = Blog::All();
-        return view('blog.blog', [ 'blog' => $blog ]);
+        $posts = Blog::All();
+        return view('blog.blog', [ 'posts' => $posts ]);
     }
 
     /**
@@ -25,7 +26,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog.createblog');
+        return view('blog.createBlog');
     }
 
     /**
@@ -37,17 +38,17 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'priority' => 'required',
-            'url'   => 'url',
+            'title' => 'required',
+            'content'   => 'required',
             'image' => 'required|image'
         ]);
     
         $store    = $request->file('image')->store('public');
         $filename = substr($store, strpos($store, "/") + 1);
         
-        blog::create([
-            'priority'  => $request->input('priority'),
-            'url'       => $request->input('url'),
+        Blog::create([
+            'title'  => $request->input('title'),
+            'content'       => $request->input('content'),
             'filename'  => $filename
         ]);
         
@@ -61,7 +62,7 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show($id)
     {
         $blog = blog::find($id);
         return view('blog.blogShow', [ 'blog' => $blog ]);
@@ -109,11 +110,11 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
-    {
-        $reference = blog::find($id);
-        $reference->delete();
-        Storage::delete('/public/'.$reference->filename);        
-        return redirect()->route('blog.index')->with('status', 'Reference Deleted Sucessfully');
-    }
+     public function destroy($id)
+     {
+         $blog = Blog::find($id);
+         $blog->delete();
+         Storage::delete('/public/'.$blog->filename);        
+         return redirect()->route('blog.index')->with('status', 'Post Deleted Sucessfully');
+     }
 }
