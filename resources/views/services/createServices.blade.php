@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     <div class="col-sm-10 col-sm-offset-1">
-                        
+
                         <h3>Create Service</h3>
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -27,12 +27,12 @@
                                 <label for="title">Title</label>
                                 <input type="text" class="form-control" id="title" name="title">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="title">Content</label>
                                 <textarea style="resize:none" id="content" name="content" class="form-control" rows="3"></textarea>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="title">Icon</label>
                                 <select id="icon" name="icon" class="form-control form-control-lg">
@@ -46,12 +46,12 @@
                                     <option value="fa fa-clipboard">Clipboard</option>
                                 </select>
                             </div>
-                            
+
                             <button class="btn btn-primary pull-right">Save</button>
-                            <button  href="{{ route('services.index') }}" class="btn btn-danger pull-left">Cancel</button>
                             
+
                         </form>
-                        
+
                     </div>
                 </div>
             </div>

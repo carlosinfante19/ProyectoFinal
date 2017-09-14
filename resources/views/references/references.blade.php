@@ -6,15 +6,15 @@
         <div class="col-m-12">
             <div class="panel panel-default">
                 <div class="panel-heading">References</div>
-        
+
                 <div class="panel-body">
-                    
+
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
                     <div class="col-sm-10 col-sm-offset-1">
                         <ul class="list-group">
                         @foreach($references as $references)
@@ -34,11 +34,11 @@
                             </a>
                         @endforeach
                         </ul>
-                        <a href="{{route('references.index') }}" class="btn btn-danger pull-left">Back</a>
+                        
                         <a href="{{route('references.create') }}" class="btn btn-success pull-right">Create New</a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

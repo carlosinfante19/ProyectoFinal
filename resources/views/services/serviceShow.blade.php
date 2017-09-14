@@ -18,14 +18,14 @@
                                     <p class="card-text">
                                         {{ $services->content}}
                                     </p>
-                                    <button  href="{{ route('services.index') }}" class="btn btn-danger pull-left">Back</button>
+                                    
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

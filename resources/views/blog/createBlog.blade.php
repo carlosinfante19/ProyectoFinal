@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     <div class="col-sm-10 col-sm-offset-1">
-                        
+
                         <h3>Create Post</h3>
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -27,12 +27,12 @@
                                 <label for="title">Title</label>
                                 <input type="text" class="form-control" id="title" name="title">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="title">Content</label>
                                 <textarea style="resize:none" id="content" name="content" class="form-control" rows="3"></textarea>
                             </div>
-                            
+
                             <div class="input-group form-group">
                                 <label class="input-group-btn">
                                 <span class="btn btn-primary">
@@ -41,12 +41,12 @@
                                 </label>
                                 <input type="text" class="form-control" readonly="">
                             </div>
-                            
+
                             <button class="btn btn-primary pull-right">Save</button>
-                            <button  href="{{ route('blog.index') }}" class="btn btn-danger pull-left">Cancel</button>
                             
+
                         </form>
-                        
+
                     </div>
                 </div>
             </div>

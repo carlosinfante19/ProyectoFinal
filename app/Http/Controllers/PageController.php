@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $page = Page::find(1);
@@ -23,12 +26,12 @@ class PageController extends Controller
     public function update(Request $request, $id)
     {
         $page = page::findOrFail($id);
-        
+
         $this->validate($request,[
             'title' => 'required',
             'content' => 'required',
         ]);
-        
+
         $page->update([
             'title'   => $request->input('title'),
             'content' => $request->input('content'),

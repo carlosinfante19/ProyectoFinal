@@ -6,15 +6,15 @@
         <div class="col-m-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Titles</div>
-        
+
                 <div class="panel-body">
-                    
+
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
                     <div class="col-sm-10 col-sm-offset-1">
                         <ul class="list-group">
                         @foreach($titles as $title)
@@ -24,13 +24,13 @@
                                 <a href="{{route('titles.show',$title->id) }}" id="delete-button"><i class="fa fa-eye pull-right" aria-hidden="true"></i></a>
                                 </li>
                             </a>
-                            
+
                         @endforeach
                         </ul>
-                        <a href="{{route('references.create') }}" class="btn btn-danger pull-left">Back</a>
+                        
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

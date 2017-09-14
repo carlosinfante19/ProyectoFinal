@@ -17,6 +17,10 @@ Route::get('page', function () {
     return view('/page');//page.blade.php
 });
 
+Route::get('/loginpage', function () {
+    return view('/index/menu');//page.blade.php
+})->middleware('auth');
+
 Route::get('posts', function () {
     return view('/blog');//category.blade.php
 });
@@ -33,4 +37,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts', 'PostController@index')->name('home');
 Route::get('/custompage', 'PostController@page')->name('home');
 Route::get('menu', 'MenuController@index')->name('Menu');
-;

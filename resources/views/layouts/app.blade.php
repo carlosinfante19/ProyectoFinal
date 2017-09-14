@@ -71,10 +71,9 @@ display: block;
                             <li><a href="{{ route ('services.index') }}" title="">Services</a></li>
                             <li><a href="{{ route('references.index') }}" title="">References</a></li>
                             <li><a href="{{ route('blog.index') }}" title="">Blog</a></li>
-                        
+
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

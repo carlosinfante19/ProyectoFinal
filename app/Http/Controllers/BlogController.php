@@ -46,16 +46,16 @@ class BlogController extends Controller
             'content'   => 'required',
             'image' => 'required|image'
         ]);
-    
+
         $store    = $request->file('image')->store('public');
         $filename = substr($store, strpos($store, "/") + 1);
-        
+
         Blog::create([
             'title'  => $request->input('title'),
             'content'       => $request->input('content'),
             'filename'  => $filename
         ]);
-        
+
         return redirect()->route('blog.index')
                          ->with('status', 'Reference Created Sucessfully');
     }
@@ -94,16 +94,17 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         $blog = blog::findOrFail($id);
-        
+
         $this->validate($request,[
             'image' => 'required',
             'title' => 'required',
             'content' => 'required',
         ]);
-        
+
         $blog->update([
             'priority'  => $request->input('priority'),
-            'url'       => $request->input('url')
+            'url'       => $request->input('url'),
+            'content'       => $request->input('content')
         ]);
 
        return redirect()->route('blog.index')->with('status', 'Services Updated Sucessfully');
@@ -119,7 +120,7 @@ class BlogController extends Controller
      {
          $blog = Blog::find($id);
          $blog->delete();
-         Storage::delete('/public/'.$blog->filename);        
+         Storage::delete('/public/'.$blog->filename);
          return redirect()->route('blog.index')->with('status', 'Post Deleted Sucessfully');
      }
 }
