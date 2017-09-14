@@ -24,6 +24,7 @@ Route::get('blog', function () {
 Route::resource( 'titles'     , 'TitlesController'     );
 Route::resource( 'services'   , 'ServicesController'   );
 Route::resource( 'references' , 'ReferencesController' );
+Route::resource( 'blog' , 'ReferencesController' );
 
 Auth::routes();
 
