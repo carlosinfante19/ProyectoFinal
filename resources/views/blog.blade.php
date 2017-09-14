@@ -56,7 +56,7 @@
                     <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                         <ul class="nav navbar-nav main-navbar-nav">
                             <li><a href="/" title="">HOME</a></li>
-                            <li><a href="page" title="">PAGE</a></li>
+                            <li><a href="custompage" title="">PAGE</a></li>
                             <li class="active"><a href="posts" title="">BLOG</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
