@@ -17,7 +17,7 @@ Route::get('page', function () {
     return view('/page');//page.blade.php
 });
 
-Route::get('blog', function () {
+Route::get('posts', function () {
     return view('/blog');//category.blade.php
 });
 
@@ -29,5 +29,6 @@ Route::resource( 'blog' , 'BlogController' );
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/posts', 'PostController@index')->name('home');
 Route::get('menu', 'MenuController@index')->name('Menu');
 ;
