@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Titles;
 use App\Services;
 use App\References;
+use App\Blog;
 
 class HomeController extends Controller
 {
@@ -24,11 +25,12 @@ class HomeController extends Controller
      *
      * @return  /Illuminate\Http\Response
      */
-         public function index()
+    public function index()
     {
         $data['titles']     = Titles::all();
         $data['services']   = Services::all();
         $data['references'] = References::all();
+        $data['blog']       = Blog::orderBy('created_at', 'DESC')->take(4)->get();
         return view('welcome', compact('data'));
     }
 }

@@ -136,46 +136,18 @@
                             <div class="col-sm-12"><h2 class="sub_title">LATEST NEWS</h2></div>
                             <div class="home_list">
                                 <ul>
+                                    @foreach($data['blog'] as $blog)
                                     <li class="col-md-3 col-sm-6 col-xs-12">
                                         <div class="thumbnail">
-                                            <img src="img/h1.jpeg" alt="Post">
+                                            <img src="{{ asset('storage/'.$blog->filename) }}" alt="Post">
                                             <div class="caption">
-                                                <h3><a href="#">Post Title</a></h3>
-                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                                <h3><a href="#">{{$blog->title}}</a></h3>
+                                                <p>{{$blog->content}}</p>
                                                 <a href="#" class="btn btn-link" role="button">More</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="col-md-3 col-sm-6 col-xs-12">
-                                        <div class="thumbnail">
-                                            <img src="img/h2.jpg" class="img-responsive" alt="Post">
-                                            <div class="caption">
-                                                <h3><a href="#">Post Title</a></h3>
-                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                                                <a href="#" class="btn btn-link" role="button">More</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-3 col-sm-6 col-xs-12">
-                                        <div class="thumbnail">
-                                            <img src="img/h3.jpeg" class="img-responsive" alt="Post">
-                                            <div class="caption">
-                                                <h3><a href="#">Post Title</a></h3>
-                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                                                <a href="#" class="btn btn-link" role="button">More</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-3 col-sm-6 col-xs-12">
-                                        <div class="thumbnail">
-                                            <img src="img/h4.jpeg" class="img-responsive" alt="Post">
-                                            <div class="caption">
-                                                <h3><a href="#">Post Title</a></h3>
-                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                                                <a href="#" class="btn btn-link" role="button">More</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
 
