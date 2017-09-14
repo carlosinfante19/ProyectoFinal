@@ -40,7 +40,7 @@ class ReferencesController extends Controller
         $this->validate($request,[
             'priority' => 'required',
             'url'   => 'url',
-            'image' => 'required|image|size:2000'
+            'image' => 'required|image'
         ]);
     
         $store    = $request->file('image')->store('public');

@@ -187,86 +187,21 @@
                                 <div class="row">
                                     <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="6000" id="myCarousel">
                                         <div class="carousel-inner">
-                                            <div class="item active">
-                                                <div class="col-md-2 col-sm-6 col-xs-12 p10">
-                                                    <a href="#"><img src="img/l1.jpg" class="img-responsive" alt="Reference"></a>
+                                            @foreach($data['references'] as $key => $value)
+                                                @if($key == 0)
+                                                <div class="item active">
+                                                    <div class="col-md-2 col-sm-6 col-xs-12 p10">
+                                                        <a href="#"><img src="{{ asset('storage/'.$value->filename) }}" class="img-responsive" alt="Reference"></a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12 p10">
-                                                    <a href="#"><img src="img/l2.jpg" class="img-responsive" alt="Reference"></a>
+                                                @else
+                                                <div class="item">
+                                                    <div class="col-md-2 col-sm-6 col-xs-12 p10">
+                                                        <a href="#"><img src="{{ asset('storage/'.$value->filename) }}" class="img-responsive" alt="Reference"></a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l3.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l4.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l5.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l6.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l7.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l8.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12 p10">
-                                                    <a href="#"><img src="img/l1.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12 p10">
-                                                    <a href="#"><img src="img/l2.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l3.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l4.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l5.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l6.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l7.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                                    <a href="#"><img src="img/l8.jpg" class="img-responsive" alt="Reference"></a>
-                                                </div>
-                                            </div>
+                                                @endif
+                                            @endforeach
                                         </div>
                                         <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
                                         <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>

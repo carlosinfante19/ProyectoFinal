@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Titles;
 use App\Services;
+use App\References;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['titles']   = Titles::all();
-        $data['services'] = Services::all();
+        $data['titles']     = Titles::all();
+        $data['services']   = Services::all();
+        $data['references'] = References::all();
         return view('welcome', compact('data'));
     }
 }
