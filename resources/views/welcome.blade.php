@@ -58,7 +58,6 @@
                         <li class="active"><a href="/" title="">HOME</a></li>
                         <li><a href="page" title="">PAGE</a></li>
                         <li><a href="posts" title="">BLOG</a></li>
-                        <li><a href="#" title="">LOG IN</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
                 <!-- END MAIN NAVIGATION -->

@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Admin') }}</title>
 
     <!-- Styles -->
     <style media="screen">
@@ -53,7 +53,7 @@ display: block;
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('Admin', 'Admin') }}
                     </a>
                 </div>
 
@@ -66,12 +66,10 @@ display: block;
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                            <li><a href="" title="">Menu</a></li>
                             <li><a href="{{ route('titles.index') }}" title="">Titles</a></li>
                             <li><a href="{{ route ('services.index') }}" title="">Services</a></li>
                             <li><a href="{{ route('references.index') }}" title="">References</a></li>
-                            <li><a href="" title="">Pages</a></li>
-                            <li><a href="" title="">Blog</a></li>
+                            <li><a href="{{ route('blog.index') }}" title="">Blog</a></li>
                         
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
