@@ -74,10 +74,10 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
-        $blog = blog::findOrFail($id);
-        return view('blog.updateblog', [ 'blog' => $blog ]);
+        $blog = Blog::findOrFail($id);
+        return view('blog.updateBlog', [ 'blog' => $blog ]);
     }
 
     /**
@@ -87,13 +87,14 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, $id)
     {
         $blog = blog::findOrFail($id);
         
         $this->validate($request,[
-            'priority' => 'required',
-            'url'   => 'url'
+            'image' => 'required',
+            'title' => 'required',
+            'content' => 'required',
         ]);
         
         $blog->update([
