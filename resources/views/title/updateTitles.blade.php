@@ -47,10 +47,8 @@
                                 </select>
                             </div>
                             
-                            <button class="btn btn-primary">
-                                Save
-                            </button>
-                            
+                            <button class="btn btn-primary pull-right">Save</button>
+                            <button  href="{{ route('titles.index') }}" class="btn btn-danger pull-left">Cancel</button>
                         </form>
                         
                     </div>

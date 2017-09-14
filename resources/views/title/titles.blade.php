@@ -18,7 +18,13 @@
                     <div class="col-sm-10 col-sm-offset-1">
                         <ul class="list-group">
                         @foreach($titles as $title)
-                            <a href="{{route('titles.edit',$title->id) }}"><li class="list-group-item">Title {{$title->id}}</li></a>
+                            <a href="{{route('titles.edit',$title->id) }}">
+                                <li class="list-group-item">Title {{$title->id}}
+                                <a href="{{route('titles.edit',$title->id) }}"><i class="fa fa-pencil pull-right" aria-hidden="true"></i></a>
+                                <a href="{{route('titles.show',$title->id) }}" id="delete-button"><i class="fa fa-eye pull-right" aria-hidden="true"></i></a>
+                                </li>
+                            </a>
+                            
                         @endforeach
                         </ul>
                         <a href="{{route('references.create') }}" class="btn btn-danger pull-left">Back</a>

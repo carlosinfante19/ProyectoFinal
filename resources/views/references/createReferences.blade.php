@@ -42,9 +42,8 @@
                                 <input type="text" class="form-control" readonly="">
                             </div>
                             
-                            <button class="btn btn-primary pull-right">
-                                Save
-                            </button>
+                            <button class="btn btn-primary pull-right">Save</button>
+                            <button  href="{{ route('references.index') }}" class="btn btn-danger pull-left">Cancel</button>
                             
                         </form>
                         

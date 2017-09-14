@@ -17,8 +17,8 @@ Route::get('page', function () {
     return view('/page');//page.blade.php
 });
 
-Route::get('category', function () {
-    return view('/category');//category.blade.php
+Route::get('blog', function () {
+    return view('/blog');//category.blade.php
 });
 
 Route::resource( 'titles'     , 'TitlesController'     );
@@ -28,3 +28,5 @@ Route::resource( 'references' , 'ReferencesController' );
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('menu', 'MenuController@index')->name('Menu');
+;

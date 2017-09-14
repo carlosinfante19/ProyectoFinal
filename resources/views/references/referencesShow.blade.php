@@ -15,10 +15,9 @@
                                 <h3 style="margin-top:0px" class="card-title text-center">Url:</h3>
                                 <p class="text-center"> {{ $references->url}}</p>
                                 <p class="card-text">
-                                    <img class="img-responsive center-block" 
-                                         src="{{ asset('storage/'.$references->filename) }}" alt=""
-                                    >
+                                    <img class="img-responsive center-block" src="{{ asset('storage/'.$references->filename) }}" alt="">
                                 </p>
+                                <button  href="{{ route('references.index') }}" class="btn btn-danger pull-left">Back</button>
                             </div>
                         </div>
                         </div>
