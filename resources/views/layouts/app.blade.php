@@ -66,7 +66,8 @@ display: block;
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                            <li><a href="{{ route('titles.index') }}" title="">Titles</a></li>
+                        <li><a href="{{ route('titles.index') }}" title="">Titles</a></li>
+                            <li><a href="{{ route('page.index') }}" title="">Page</a></li>
                             <li><a href="{{ route ('services.index') }}" title="">Services</a></li>
                             <li><a href="{{ route('references.index') }}" title="">References</a></li>
                             <li><a href="{{ route('blog.index') }}" title="">Blog</a></li>
