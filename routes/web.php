@@ -25,6 +25,7 @@ Route::resource( 'titles'     , 'TitlesController'     );
 Route::resource( 'services'   , 'ServicesController'   );
 Route::resource( 'references' , 'ReferencesController' );
 Route::resource( 'blog' , 'BlogController' );
+Route::resource( 'page' , 'PageController' );
 
 Auth::routes();
 
