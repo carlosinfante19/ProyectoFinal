@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-m-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Rferences</div>
+                <div class="panel-heading">References</div>
         
                 <div class="panel-body">
                     
@@ -34,6 +34,7 @@
                             </a>
                         @endforeach
                         </ul>
+                        <a href="{{route('references.create') }}" class="btn btn-danger pull-left">Back</a>
                         <a href="{{route('references.create') }}" class="btn btn-success pull-right">Create New</a>
                     </div>
                 </div>

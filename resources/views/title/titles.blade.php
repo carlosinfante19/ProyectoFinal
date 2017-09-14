@@ -21,6 +21,7 @@
                             <a href="{{route('titles.edit',$title->id) }}"><li class="list-group-item">Title {{$title->id}}</li></a>
                         @endforeach
                         </ul>
+                        <a href="{{route('references.create') }}" class="btn btn-danger pull-left">Back</a>
                     </div>
                 </div>
                 

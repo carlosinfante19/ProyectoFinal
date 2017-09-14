@@ -22,9 +22,9 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return  /Illuminate\Http\Response
      */
-    public function index()
+         public function index()
     {
         $data['titles']     = Titles::all();
         $data['services']   = Services::all();
